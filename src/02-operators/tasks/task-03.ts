@@ -18,7 +18,7 @@
  * - Final salary
  */
 
-const employeeName = Dimas
+const employeeName = `Dimas`
 const basicSalary = 5000000
 const OvertimeHours = 12
 const OvertimeRate = 50000

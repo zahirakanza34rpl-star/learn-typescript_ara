@@ -13,3 +13,26 @@
  * - Discount amount
  * - Final payment
  */
+
+const hourlyRate = 8000
+const hours = 7
+const minutes = 35
+
+const totalMinutes = (hours * 60) + minutes;
+
+const remainingMinutes = totalMinutes % 60;
+
+const billedHours = remainingMinutes > 0 ? hours + 1 : hours;
+
+const totalPayment = billedHours * hourlyRate;
+
+const discount = billedHours > 5 ? totalPayment * 0.15 : 0;
+
+const finalPayment = totalPayment - discount;
+
+console.log("Total Minutes      :", totalMinutes);
+console.log("Remaining Minutes  :", remainingMinutes);
+console.log("Billed Hours       :", billedHours);
+console.log("Payment Before Disc: Rp" + totalPayment);
+console.log("Discount           : Rp" + discount);
+console.log("Final Payment      : Rp" + finalPayment);

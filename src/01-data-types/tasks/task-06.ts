@@ -41,13 +41,13 @@ const product2: product ={
 }
 
 const product3: product ={
-    productCode: 144
-    productName: "Ember"
-    price: "Rp40.000"
-    stock: 23
-    weight: "500gr"
-    CusRating: 5
-    isDiscount: false
+    productCode: 144,
+    productName: "Ember",
+    price: "Rp40.000",
+    stock: 23,
+    weight: "500gr",
+    CusRating: 5,
+    isDiscount: false,
 }
 
 // product 1

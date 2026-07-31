@@ -32,6 +32,9 @@ const nadiaScore: StudentScore = {
     attendance: 80
 }
 
+let finalScoree = nadiaScore.assignment + nadiaScore.attendance + nadiaScore.final + nadiaScore.midterm 
+let avarage = finalScoree/4
+
 const ekstracurricularActivity: string = `Scout`
 
 console.log(`Name: ${name}`)
@@ -41,3 +44,4 @@ console.log("Assignment Score: " + nadiaScore.assignment)
 console.log(`Mid Term Score: ${nadiaScore.midterm}`)
 console.log(`Final Score: ${nadiaScore.final}`)
 console.log(`Attandence Score: ${nadiaScore.attendance}`)
+console.log(`Final Result: ${avarage}` )

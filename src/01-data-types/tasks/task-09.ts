@@ -28,7 +28,7 @@ const participant: Participant [] = [
     name: "Ahmad Fauzi",
     age: 16,
     hasPaid: true,
-    }
+    },
     {
     studentId: "ST002",
     name: "Siti Nurhaliza",

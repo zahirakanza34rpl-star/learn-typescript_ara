@@ -18,3 +18,6 @@ const attendances = [
   { name: "Gita", present: true },
   { name: "Hana", present: false }
 ];
+
+let presentCount = 0
+let absenCount = 0

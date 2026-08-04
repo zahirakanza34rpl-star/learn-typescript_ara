@@ -21,3 +21,26 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+let readyToShip = 0
+let unpaidOrders = 0
+let waitingStock = 0
+
+console.log("Orders Ready To Ship: ")
+
+for (const order of orders ){
+  if(order.paid && order.stockAvailable){
+    readyToShip++
+    console.log("- " + order.id)
+  }
+  if(!order.paid){
+    unpaidOrders++
+  }
+  if (!order.stockAvailable){
+    waitingStock++
+  }
+}  
+
+console.log("Ready To Ship: ", readyToShip)
+console.log("Unpaid Orders: ", unpaidOrders)
+console.log("Waiting Stock Orders: ", waitingStock)

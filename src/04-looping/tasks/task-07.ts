@@ -21,3 +21,20 @@ const attendances = [
 
 let presentCount = 0
 let absenCount = 0
+
+console.log("Absent Student:")
+
+for(const attendance of attendances) {
+  if(attendance.present){
+    presentCount++
+  } else {
+    absenCount++
+    console.log("- " + attendance.name)
+  }
+}
+
+const attendancePrecentage = ( presentCount / attendances.length ) *100
+
+console.log("Present Students: ", presentCount)
+console.log("Absent Students: ", absenCount)
+console.log("Attendances Presentage: ", attendancePrecentage + "%")

@@ -30,24 +30,43 @@
 
 const passengerName: string = "Fajar Nugroho"
 const isOnline: boolean = true
-const CabinClass: string = "Economy"
+const CabinClass: string = "Premium"
 const baggageWeight: number = 24
 
 let checkInStatus: string = ""
+let mealStatus: string = ""
 
 if (!isOnline) {
     checkInStatus = "Please complete online check-in first."
 } else {
+ 
     if (baggageWeight > 20) {
-        if (CabinClass === "Business") {
-            checkInStatus = "Extra baggage allowed."
+        if (CabinClass === "Premium") {
+            checkInStatus = "Extra Baggage allowed."
+            mealStatus = "Free Meal Included."
+
+        } else if (CabinClass === "Business"){
+            checkInStatus = "Extra Baggage allowed."
+            mealStatus = "No Free Meal Included."
+
         } else {
-            checkInStatus = "Additional baggage fee required."
+        checkInStatus = "Additional Baggage Fee Required."
+        mealStatus = "No Free Meal Included."
         }
+        
     } else {
-        checkInStatus = "Proceed to boarding pass printing."
+        checkInStatus = "Proceed to Boarding Pass Printing."
+
+        if (CabinClass === "Premium") {
+            mealStatus = "Free meal included"
+        } else {
+            mealStatus = "No Free Meal Included."
+        }
     }
 }
 
 console.log(`Passenger      : ${passengerName}`)
+console.log(`Cabin Class    : ${CabinClass}`)
+console.log(`Baggage Weight : ${baggageWeight} kg`)
 console.log(`Check-in Status: ${checkInStatus}`)
+console.log(`Meal Status    : ${mealStatus}`)

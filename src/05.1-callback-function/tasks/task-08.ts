@@ -2,6 +2,8 @@
  * A company has a simple data-processing engine used to analyze transaction records.
  */
 
+import { triggerAsyncId } from "node:async_hooks";
+
 const transactions = [
     {
         id: "TRX001",
@@ -34,6 +36,64 @@ const transactions = [
         status: "cancelled"
     }
 ];
+
+function processTransactions<T>(
+    transaction: typeof transactions,
+    callback: (transaction: typeof transactions[number]) => T
+): T[]{
+    return transaction.map (callback)
+}
+
+
+function getCustomerName(
+    transaction: typeof transactions[number]
+): string {
+    return transaction.customer
+}
+
+
+function getTransactionCategory(
+    transaction: typeof transactions[number]
+): string {
+
+    if (transaction.amount >= 2000000000){
+        return "High Value"
+    } else if (transaction.amount >= 1000000000){
+        return "Medium Value"
+    } else {
+        return "Low Value"
+    }
+}
+
+function calculatePlatformFee(
+    transaction: typeof transactions[number]
+): number {
+
+    if (transaction.status === "paid") {
+        return transaction.amount * 0.02
+    } else if (transaction.status === "pending") {
+        return transaction.amount * 0.01
+    } else {
+        return 0
+    }
+}
+
+console.log("====== CUSTOMER NAMES ======");
+console.log(
+    processTransactions(transactions, getCustomerName)
+);
+
+
+console.log("====== TRANSACTION CATEGORY ======");
+console.log(
+    processTransactions(transactions, getTransactionCategory)
+);
+
+
+console.log("====== PLATFORM FEE ======");
+console.log(
+    processTransactions(transactions, calculatePlatformFee)
+);
 
 /** TASKS:
  * - Extract customer's name only in array

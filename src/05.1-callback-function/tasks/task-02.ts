@@ -60,7 +60,7 @@ function showGrade(score: number){5
     }
 }
 
-
+console.log("---Score---")
 processScores(scores,printScore)
 
 console.log("---Passes Report---")
